@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #010413;
+    font-family: "Jost", sans-serif;
+}
+.login-box {
+    background-color: #131425;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 455.4px;
+    height: 412.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box h2 {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+.login-container {
+    background-color: #1B1E2B;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 455.4px;
+    height: 277px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 10px;
+}
+.login-container button {
+    background-color: #B91E29;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    height: 40px;
+    cursor: pointer;
+    width: 80%;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+.login-container button:hover {
+    background-color: #89151D;
+}
+.register {
+    color: white;
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.register p {
+    margin: 0; 
+  }
+.register a {
+    color: #F6303E;
+    text-decoration: none;
+}
+.register a:hover {
+    text-decoration: underline;
+}
