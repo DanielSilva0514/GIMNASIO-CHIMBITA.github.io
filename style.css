@@ -35,6 +35,7 @@ body {
     display: flex;
     flex-direction: column; 
     gap: 15px;
+
 }
 .input-box {
     display: flex;
@@ -43,6 +44,7 @@ body {
     margin-bottom: 15px; 
     width: 90%; 
     align-self: center;
+      margin-top: 20px;
 }
 
 .input-box label {
@@ -50,14 +52,13 @@ body {
     color: white;
     font-size: 14px;
     top: 50%;
-    left: 5px;
     transform: translateY(-50%);
     pointer-events: none;
     margin-bottom: 5px; 
 }
 .input-box input:focus~label,
 .input-box input:valid~label {
-    top:-5px;
+    top:-20px;
 }
 
 .input-box input {
@@ -69,6 +70,7 @@ body {
     background: #FFFFFF;
     opacity: 0.1;
     align-self: center;
+    
 }
 .login-container button {
     background-color: #B91E29;
@@ -112,7 +114,19 @@ body {
 .forgot a {
     color: #F6303E;
     text-decoration: none;
+    font-size: 14px;
 }
 .forgot a:hover {
     text-decoration: underline;
+}
+
+.instructions {
+    text-align: left;
+    padding: 0 10px; /* Ajuste de padding para mantener alineación con input */
+    font-size: 18px;
+    color: white;
+    opacity: 0.5;
+    width: 90%; /* Alineación del ancho con input-box */
+    align-self: center; /* Centramos respecto al contenedor principal */
+
 }
