@@ -58,6 +58,7 @@ header {
 }
 .logo:hover {
     transform: scale(1.1);
+    text-decoration: none;
 }
 span {
     color: var(--main-color);
@@ -97,7 +98,6 @@ span {
 .navbar .logo:hover, 
 .navbar .logo.active {
     color: var(--text-color);
-    border-bottom: 3px solid var(--main-color); 
 }
 
 #menu {
