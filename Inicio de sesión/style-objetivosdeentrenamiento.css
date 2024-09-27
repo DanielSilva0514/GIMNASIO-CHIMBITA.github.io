@@ -88,7 +88,6 @@ span {
 
 .navbar a:hover, 
 .navbar a.active {
-    color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
 .navbar li {
@@ -103,6 +102,7 @@ span {
 .navbar .logo:hover, 
 .navbar .logo.active {
     color: var(--text-color);
+    border-bottom: none;
 }
 
 #menu {
