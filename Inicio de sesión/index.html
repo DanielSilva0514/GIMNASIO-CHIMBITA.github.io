@@ -18,7 +18,7 @@
         <ul class="navbar">    
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#clases">CLASES</a></li>
-            <a hrerf="#inicio" class="logo"><span>Fitness</span>Plus</a>
+            <a href="#inicio" class="logo"><span>Fitness</span>Plus</a>
             <li><a href="#entrenamiento">ENTRENAMIENTO</a></li>
             <li><a href="register.html">ÚNETE</a></li>
         </ul>
@@ -62,7 +62,7 @@
     </section>
     <section class="train" id="entrenamiento">
         <div class="train-img">
-            <img src="img/personalizado.png" alt="personalizado">
+            <img src="img/personalizado.png" alt="personalizado" srcset="img/personalizado-small.png 480w, img/personalizado-medium.png 768w, img/personalizado.png 1024w">
         </div>
 
         <div class="train-content">
@@ -74,7 +74,7 @@
             </p>
             <p>¡Empieza hoy tu transformación con nosotros!</p>
 
-            <a href="" class="button">CONOCE MÁS</a>
+            <a href="ObjetivosDeEntrenamiento.html" class="button">CONOCE MÁS</a>
         </div>
     </section>
 
@@ -128,10 +128,17 @@
         </div>
     </section>
 
-    
+    <script>
+        const menu = document.getElementById('menu');
+        const navbar = document.querySelector('.navbar');
+        
+        menu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+        </script>
 
 </body>
-<footer class="footer"></footer>
+<footer class="footer">
     <div class="footer-content">
         <div class="footer-section about">
             <h2><span>Fitness</span>Plus</h2>

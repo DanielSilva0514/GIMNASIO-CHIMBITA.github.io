@@ -110,8 +110,7 @@ header {
       }
       
       .section-image{
-        height: 600px;
-      width: 100%;
+        min-height: 70vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -123,9 +122,9 @@ header {
       }
     
       .section-title {
-        font-family: 'Archivo', sans-serif;
+        text-shadow: 0 4px 8px rgba(0.4, 0.4, 0.4, 0.4);
+        letter-spacing: 3px;
         font-size: 6rem;
-        text-transform: uppercase;
         margin-top: 5%;
         margin-bottom: 5%;
         letter-spacing: 5px;
@@ -202,7 +201,7 @@ header {
 }
 
 .schedule-btn:hover {
-    background-color: black;
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -237,7 +236,7 @@ header {
 
 /* Footer*/
 .footer {
-    background-color: #111;
+    background-color: var(--bg-color);
     color: #fff;
     padding: 5rem 0 3rem;
     font-size: 1.8rem; 
@@ -332,6 +331,30 @@ header {
     margin-top: 3rem;
     font-size: 1.6rem; 
 }
+/* Barra de scroll */
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    width: 50px;
+}
+
+@media (max-width: 480px) {
+    .home-content h3 {
+       font-size: 2.8rem; /* De 3rem a 2.8rem */
+    }
+ 
+    .home-content h1 {
+       font-size: 3.2rem; /* De 3.5rem a 3.2rem */
+    }
+ 
+    .button {
+       padding: 1rem 2rem;
+       font-size: 1.5rem; /* De 1.6rem a 1.5rem */
+    }
+ }
   
   /* Responsive para dispositivos con ancho máximo de 991px */
 @media (max-width: 991px) {

@@ -70,6 +70,10 @@ span {
     width: 100%;
     padding: 1rem 0;
 }
+.navbar.active {
+    display: flex; 
+    flex-direction: column;
+ }
 
 .navbar a {
     font-size: 1.8rem;
@@ -105,7 +109,7 @@ span {
     color: var(--main-color);
     cursor: pointer;
     margin-left: 4px;
-    display: none;
+    display: block;
 }
 
 /*Contenido principal */
@@ -169,6 +173,9 @@ span {
 }
 .services {
     background: var(--snd-bg-color);
+}
+.section {
+    padding-bottom: 10px;
 }
 .services-content{
    display: grid;
@@ -243,7 +250,6 @@ span {
     gap: 1rem;
     background: var(--snd-bg-color);
     padding-top: 5rem;
-    margin-top: -10rem;
 }
  
 .train-img img{
@@ -345,7 +351,7 @@ span {
 
 /* Footer*/
 .footer {
-    background-color: #111;
+    background-color: var(--bg-color);
     color: #fff;
     padding: 5rem 0 3rem;
     font-size: 1.8rem; 
@@ -451,6 +457,20 @@ span {
     width: 50px;
 }
 
+@media (max-width: 480px) {
+    .home-content h3 {
+       font-size: 2.8rem; /* De 3rem a 2.8rem */
+    }
+ 
+    .home-content h1 {
+       font-size: 3.2rem; /* De 3.5rem a 3.2rem */
+    }
+ 
+    .button {
+       padding: 1rem 2rem;
+       font-size: 1.5rem; /* De 1.6rem a 1.5rem */
+    }
+ }
 /* Responsive para dispositivos con ancho máximo de 991px */
 @media (max-width: 991px) {
     .navbar {
@@ -517,6 +537,7 @@ span {
 
     .train-content h2 {
         font-size: 4rem;
+        text-align: center;
     }
 
     .plans {
@@ -696,6 +717,7 @@ span {
 
     .train-content h2 {
         font-size: 3rem;
+        text-align: center;
     }
 
     .plans-content {
