@@ -461,8 +461,8 @@ span {
         font-size: 1.6rem;
     }
     .section-description {
-        margin: 0 15px; /* Márgenes aún más pequeños en pantallas móviles */
-        font-size: 14px; /* Fuente más pequeña para móviles */
+        margin: 0 15px; 
+        font-size: 14px; 
     }
     .benefit-description{
         text-align: center; 
