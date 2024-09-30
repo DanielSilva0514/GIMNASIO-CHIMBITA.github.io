@@ -293,6 +293,14 @@ h1{
     font-size: 30px;
     color: #8b0000;
 }
+.mt-3{
+    text-align: center;
+}
+.imagen-perfil {
+    padding-bottom: 8px;
+    width: 54px;   /* Ajusta el ancho */
+    height: auto;  /* Ajusta el alto, puedes usar auto para mantener proporciones */
+}
 
 /*footer*/
 .footer {
