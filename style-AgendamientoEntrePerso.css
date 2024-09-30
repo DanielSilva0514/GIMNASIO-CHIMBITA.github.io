@@ -364,20 +364,27 @@ span {
   /* Responsive para dispositivos con ancho máximo de 991px */
 @media (max-width: 991px) {
     .navbar {
+        display: none; 
         flex-direction: column;
         background: var(--bg-color);
         transition: all 0.5s ease;
     }
 
     .navbar a {
-        display: block;
-        padding: 1.7rem;
-        font-size: 2.2rem;
+        display: block; 
+        padding: 1rem;
+        font-size: 2rem;
     }
 
     .navbar .active {
         right: 0;
     }
+    .navbar .logo {
+        font-size: 2.5rem; 
+        font-weight: 700;
+        border-bottom: none;
+    }
+
 
     header {
         padding: 2rem 3%;

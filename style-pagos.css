@@ -88,3 +88,29 @@ form .btn:hover {
     background: #8b0000;
    
 }
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    .flex {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .input-box input {
+        padding: 8px;
+    }
+
+    form .btn {
+        font-size: 1rem;
+    }
+}

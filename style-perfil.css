@@ -32,53 +32,63 @@ header {
     font-weight: 700;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    }
-    .logo:hover {
+}
+.logo:hover {
     transform: scale(1.1);
     text-decoration: none;
-    }
+}
+span {
+    color: var(--main-color);
+}
+.navbar {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    width: 100%;
+    padding: 1rem 0;
+}
+.navbar.active {
+    display: flex; 
+    flex-direction: column;
+ }
 
-    span {
-        color: var(--main-color);
-    }
+.navbar a {
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--text-color);
+    margin-left: 4px;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid transparent;
+    letter-spacing: 2px;
+}
 
-    .navbar {
-        display: flex;
-        justify-content: space-around; 
-        align-items: center; 
-        width: 100%;
-        padding: 1rem 0;
-    }
-    
-    .navbar a {
-        font-size: 1.8rem;
-        font-weight: 200;
-        color: var(--text-color);
-        margin-left: 4px;
-        transition: all 0.5s ease;
-        border-bottom: 3px solid transparent;
-        letter-spacing: 2px;
-    }
-    
-    .navbar a:hover, 
-    .navbar a.active {
-        color: var(--main-color);
-        border-bottom: 3px solid var(--main-color);
-    }
-    .navbar li {
-        display: inline-block;
-    }
-    
-    .navbar .logo {
-        font-size: 4rem; 
-        font-weight: 700;
-        border-bottom: none;
-    }
-    .navbar .logo:hover, 
-    .navbar .logo.active {
-        color: var(--text-color);
-    }
+.navbar a:hover, 
+.navbar a.active {
+    color: var(--text-color);
+    border-bottom: 3px solid var(--main-color);
+}
+.navbar li {
+    display: inline-block;
+}
 
+.navbar .logo {
+    font-size: 4rem; 
+    font-weight: 700;
+    border-bottom: none;
+}
+.navbar .logo:hover, 
+.navbar .logo.active {
+    color: var(--text-color);
+    border-bottom: none;
+}
+
+#menu {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    margin-left: 4px;
+    display: block;
+}
 
 .section {
     text-align: center;
@@ -399,277 +409,4 @@ h1{
     color: #bbb;
     margin-top: 3rem;
     font-size: 1.6rem; 
-}
-
-/* Responsive para dispositivos con ancho máximo de 991px */
-@media (max-width: 991px) {
-    .navbar {
-        flex-direction: column;
-        background: var(--bg-color);
-        transition: all 0.5s ease;
-    }
-
-    .navbar a {
-        display: block;
-        padding: 1.7rem;
-        font-size: 2.2rem;
-    }
-
-    .navbar .active {
-        right: 0;
-    }
-
-    header {
-        padding: 2rem 3%;
-        flex-direction: column;
-    }
-
-    .home {
-        padding: 10rem 3%;
-    }
-
-    .home-content {
-        text-align: center;
-        margin-top: 3rem;
-    }
-
-    .home-content h3 {
-        font-size: 4rem;
-    }
-
-    .button {
-        padding: 1.2rem 3rem;
-        font-size: 1.8rem;
-    }
-
-    .services {
-        padding: 5rem 3%;
-    }
-
-    .services-content {
-        grid-template-columns: 1fr; 
-        gap: 3rem;
-    }
-
-    .train {
-        flex-direction: column;
-        padding: 5rem 3%;
-    }
-
-    .train-img img {
-        width: 90vw;
-    }
-
-    .train-content {
-        padding: 4rem 0;
-        text-align: center;
-    }
-
-    .train-content h2 {
-        font-size: 4rem;
-    }
-
-    .plans {
-        padding: 5rem 3%;
-    }
-
-    .plans-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box {
-        margin: 2rem 0;
-        width: 100%;
-        max-width: 450px; 
-    }
-
-    .footer {
-        padding: 5rem 2rem;
-        font-size: 1.6rem; 
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-        margin: 2rem 0;
-    }
-
-    .footer-bottom {
-        font-size: 1.4rem;
-    }
-}
-
-/* Responsive para dispositivos con ancho máximo de 786px */
-@media (max-width: 786px) {
-    .navbar {
-        display: none; 
-    }
-
-    .home {
-        flex-direction: column;
-    }
-
-    .home-content h3 {
-        font-size: 3.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .home-content h1 {
-        font-size: 4rem;
-        margin-top: 1.5rem;
-    }
-
-    .home-content {
-        order: 2;
-        padding: 0 2rem;
-    }
-
-    .home-img img {
-        width: 80vw;
-        margin-top: 4rem;
-    }
-
-    .services {
-        padding: 5rem 2%;
-    }
-
-    .services-content {
-        grid-template-columns: 1fr; 
-    }
-
-    .row {
-        width: 100%;
-        margin: 2rem 0;
-    }
-
-    .services img {
-        width: 100%;
-    }
-
-    .train {
-        flex-direction: column;
-        padding: 4rem 2%;
-    }
-
-    .train-img img {
-        width: 90vw;
-    }
-
-    .train-content {
-        padding: 3rem 0;
-        text-align: center;
-    }
-
-    .train-content h2 {
-        font-size: 3.5rem;
-    }
-
-    .plans {
-        padding: 4rem 2%;
-    }
-
-    .plans-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box {
-        margin: 2rem 0;
-        width: 100%;
-        max-width: 400px; 
-    }
-
-    .footer {
-        padding: 4rem 2rem;
-        font-size: 1.5rem; 
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        width: 100%;
-        max-width: 450px;
-        text-align: center;
-        margin: 2rem 0;
-    }
-
-    .footer-bottom {
-        font-size: 1.3rem;
-    }
-}
-
-/* Responsive para dispositivos con ancho máximo de 480px */
-@media (max-width: 480px) {
-    .home-content h3 {
-        font-size: 3rem;
-    }
-
-    .home-content h1 {
-        font-size: 3.5rem;
-    }
-
-    .button {
-        padding: 1rem 2rem;
-        font-size: 1.6rem;
-    }
-
-    .services {
-        padding: 4rem 1rem;
-    }
-
-    .services-content {
-        grid-template-columns: 1fr; 
-    }
-
-    .row img {
-        width: 100%;
-    }
-
-    .train {
-        flex-direction: column;
-        padding: 3rem 1rem;
-    }
-
-    .train-img img {
-        width: 100%;
-    }
-
-    .train-content h2 {
-        font-size: 3rem;
-    }
-
-    .plans-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .box {
-        margin: 2rem 0;
-        width: 100%;
-        max-width: 350px; 
-    }
-
-    .footer {
-        padding: 3rem 1rem;
-        font-size: 1.4rem;
-    }
-
-    .footer-section {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .footer-bottom {
-        font-size: 1.2rem;
-    }
 }
