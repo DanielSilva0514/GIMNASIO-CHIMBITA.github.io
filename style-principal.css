@@ -460,38 +460,44 @@ span {
 
 @media (max-width: 480px) {
     .home-content h3 {
-       font-size: 2.8rem; /* De 3rem a 2.8rem */
+       font-size: 2.8rem; 
     }
  
     .home-content h1 {
-       font-size: 3.2rem; /* De 3.5rem a 3.2rem */
+       font-size: 3.2rem; 
     }
  
     .button {
        padding: 1rem 2rem;
-       font-size: 1.5rem; /* De 1.6rem a 1.5rem */
+       font-size: 1.5rem; 
     }
  }
 /* Responsive para dispositivos con ancho máximo de 991px */
 @media (max-width: 991px) {
     .navbar {
+        display: none; 
         flex-direction: column;
         background: var(--bg-color);
         transition: all 0.5s ease;
     }
 
     .navbar a {
-        display: block;
-        padding: 1.7rem;
-        font-size: 2.2rem;
+        display: block; 
+        padding: 1rem;
+        font-size: 2rem;
     }
 
     .navbar .active {
         right: 0;
     }
+    .navbar .logo {
+        font-size: 2.5rem; 
+        font-weight: 700;
+        border-bottom: none;
+    }
 
     header {
-        padding: 2rem 3%;
+        padding: 3rem 3%;
         flex-direction: column;
     }
 
@@ -505,7 +511,7 @@ span {
     }
 
     .home-content h3 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .button {
@@ -518,8 +524,12 @@ span {
     }
 
     .services-content {
-        grid-template-columns: 1fr; 
-        gap: 3rem;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2rem;
+    }
+
+    .row {
+        width: 100%;
     }
 
     .train {
@@ -528,7 +538,7 @@ span {
     }
 
     .train-img img {
-        width: 90vw;
+        width: 80vw;
     }
 
     .train-content {
@@ -536,11 +546,16 @@ span {
         text-align: center;
     }
 
-    .train-content h2 {
-        font-size: 4rem;
-        text-align: center;
-    }
 
+    .train-content .heading {
+        text-align: center;
+        font-size: 3rem;
+    }
+    
+    .train-content p{
+        font-size: 2rem;
+        margin: 5rem 0 4rem;
+    }
     .plans {
         padding: 5rem 3%;
     }
@@ -613,12 +628,13 @@ span {
     }
 
     .services-content {
-        grid-template-columns: 1fr; 
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+        gap: 2rem;
     }
 
     .row {
         width: 100%;
-        margin: 2rem 0;
+        margin: 1rem 0; /* Ajustar el margen entre filas */
     }
 
     .services img {
@@ -631,7 +647,7 @@ span {
     }
 
     .train-img img {
-        width: 90vw;
+        width: 80vw;
     }
 
     .train-content {
@@ -700,11 +716,27 @@ span {
     }
 
     .services-content {
-        grid-template-columns: 1fr; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1.5rem;
+    }
+
+    .row {
+        width: 100%;
+        margin: 1rem 0;
     }
 
     .row img {
         width: 100%;
+        height: auto;
+    }
+    .row h4 {
+        font-size: 1.8rem; 
+    }
+
+    .services .button {
+        font-size: 1.5rem; 
+        padding: 1rem 2rem; 
+        margin-top: 3rem;   
     }
 
     .train {
@@ -713,7 +745,8 @@ span {
     }
 
     .train-img img {
-        width: 100%;
+        width: 80vw;
+        align-items: center;
     }
 
     .train-content h2 {

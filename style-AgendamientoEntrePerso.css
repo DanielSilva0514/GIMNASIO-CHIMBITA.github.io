@@ -353,13 +353,7 @@ span {
 }
 
 @media (max-width: 480px) {
-    .home-content h3 {
-       font-size: 2.8rem; /* De 3rem a 2.8rem */
-    }
- 
-    .home-content h1 {
-       font-size: 3.2rem; /* De 3.5rem a 3.2rem */
-    }
+
  
     .button {
        padding: 1rem 2rem;
