@@ -8,6 +8,7 @@
         Gimansio_Chimbita
     </title>
     <link rel="stylesheet" href="style-principal.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -26,7 +27,7 @@
     </header>
 
     <section class="home" id="inicio">
-        <div class="home-content">
+        <div class="home-content" data-aos="zoom-in">
             <h3>NOT A GYM</h3>
             <h3>A ROCKSTAR </h3>
             <h3>TEMPLE </h3>
@@ -36,8 +37,8 @@
     </section>
 
     <section class="services" id="clases">
-        <h2 class="heading">NUESTRAS CLASES</h2>
-        <div class="services-content">
+        <h2 class="heading" data-aos="zoom-in-down">NUESTRAS CLASES</h2>
+        <div class="services-content" data-aos="zoom-in-up">
             <div class="row">
                 <img src="img/cycla.png" alt="cycla">
                 <h4>CYCLA</h4>
@@ -61,11 +62,11 @@
         </div>
     </section>
     <section class="train" id="entrenamiento">
-        <div class="train-img">
+        <div class="train-img" data-aos="zoom-in-down">
             <img src="img/personalizado.png" alt="personalizado" srcset="img/personalizado-small.png 480w, img/personalizado-medium.png 768w, img/personalizado.png 1024w">
         </div>
 
-        <div class="train-content">
+        <div class="train-content" data-aos="zoom-in-down">
             <h2 class="heading">ENTRENAMIENTO PERSONALIZADO</h2>
 
             <p>En nuestro gimnasio, ofrecemos entrenamiento personalizado para ayudarte a alcanzar tu objetivo, como
@@ -79,8 +80,8 @@
     </section>
 
     <section class="plans" id="plans">
-        <h2 class="heading"> PLANES</h2>
-        <div class="plans-content">
+        <h2 class="heading" data-aos="zoom-in-down"> PLANES</h2>
+        <div class="plans-content" data-aos="zoom-in-down">
 
             <div class="box">
                 <h3>BÁSICO</h3>
@@ -89,7 +90,7 @@
                     <li>Zona funcional</li>
                     <li>No pagas inscripción ni cuota de mantenimiento.</li>
                 </ul>
-                <a href="register.html">
+                <a href="pagos.html">
                     Afíliate ahora
                     <i class='bx bx-right-arrow-alt'></i>
                 </a>
@@ -104,7 +105,7 @@
                     <li>Acceso a la zona VIP</li>
                     <li>Descuentos con marcas aliadas y beneficios especiales.</li>
                 </ul>
-                <a href="register.html">
+                <a href="pagos.html">
                     Afíliate ahora
                     <i class='bx bx-right-arrow-alt'></i>
                 </a>
@@ -119,7 +120,7 @@
                     <li>Sin cláusula de permanencia.</li>
                     <li>Entrena gratis con un amigo</li>
                 </ul>
-                <a href="register.html">
+                <a href="pagos.html">
                     Afíliate ahora
                     <i class='bx bx-right-arrow-alt'></i>
                 </a>
@@ -127,7 +128,13 @@
 
         </div>
     </section>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset:300,
+        duration:1400,
+      });
+    </script>
     <script>
         const menu = document.getElementById('menu');
         const navbar = document.querySelector('.navbar');
