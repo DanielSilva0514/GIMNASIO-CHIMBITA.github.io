@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver Entrenamientos</title>
+  <link rel="stylesheet" href="style-ver_agenda.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <h2>Menú</h2>
+      <ul>
+        <li><a href="#" data-section="clases-reservadas" class="menu-item active">Clases reservadas</a></li>
+        <li><a href="#" data-section="entrenamientos-personalizados" class="menu-item">Entrenamientos personalizados</a></li>
+        <li><a href="cerrar_sesion.html" class="menu-item">Cerrar sesión</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenido dinámico -->
+    <main class="content">
+      <section id="clases-reservadas" class="content-section active">
+        <h2>Clases Reservadas</h2>
+        <p>Aquí se muestran las clases reservadas.</p>
+        <!-- Añade detalles dinámicos aquí -->
+      </section>
+      <section id="entrenamientos-personalizados" class="content-section">
+        <h2>Entrenamientos Personalizados</h2>
+        <p>Aquí se muestran los entrenamientos personalizados agendados.</p>
+        <!-- Añade detalles dinámicos aquí -->
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Lógica para mostrar/ocultar secciones dinámicamente
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', event => {
+        event.preventDefault();
+
+        // Cambiar el contenido activo
+        document.querySelectorAll('.content-section').forEach(section => {
+          section.classList.remove('active');
+        });
+        const sectionId = event.target.getAttribute('data-section');
+        if (sectionId) {
+          document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Cambiar el estado activo del menú
+        document.querySelectorAll('.menu-item').forEach(link => {
+          link.classList.remove('active');
+        });
+        event.target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
