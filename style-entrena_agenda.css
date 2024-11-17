@@ -1,0 +1,82 @@
+/* Estilo general del contenedor */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  header {
+    background-color: #007bff;
+    padding: 10px;
+    color: white;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  
+  header nav a.active {
+    background-color: #0056b3;
+    border-radius: 5px;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  #contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Lista de entrenamientos */
+  #contenido ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #contenido li {
+    background-color: #f1f1f1;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  #contenido li strong {
+    color: #0056b3;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
