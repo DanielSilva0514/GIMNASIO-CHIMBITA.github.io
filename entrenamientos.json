@@ -1,0 +1,29 @@
+{
+    "entrenamientos": [
+      {
+        "id": 1,
+        "entrenador": "danielentrenador@gmail.com",
+        "cliente": "cliente1@gmail.com",
+        "fecha": "2024-11-20",
+        "hora": "10:00 AM",
+        "actividad": "Entrenamiento de fuerza"
+      },
+      {
+        "id": 2,
+        "entrenador": "danielentrenador@gmail.com",
+        "cliente": "cliente2@gmail.com",
+        "fecha": "2024-11-21",
+        "hora": "3:00 PM",
+        "actividad": "Entrenamiento funcional"
+      },
+      {
+        "id": 3,
+        "entrenador": "otroentrenador@gmail.com",
+        "cliente": "cliente3@gmail.com",
+        "fecha": "2024-11-22",
+        "hora": "8:00 AM",
+        "actividad": "Yoga"
+      }
+    ]
+  }
+  
