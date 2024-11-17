@@ -1,0 +1,20 @@
+{
+    "usuarios": [
+      {
+        "correo": "danielentrenador@gmail.com",
+        "rol": "entrenador",
+        "accesos": ["entrenamientos_agendados"]
+      },
+      {
+        "correo": "juanq01@gmail.com",
+        "rol": "cliente",
+        "accesos": ["comprar_planes", "agendar_entrenamientos"]
+      },
+      {
+        "correo": "admin@gimnasio.com",
+        "rol": "administrador",
+        "accesos": ["gestion_usuarios", "gestion_planes", "ver_reportes"]
+      }
+    ]
+  }
+  
