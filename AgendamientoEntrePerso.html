@@ -159,13 +159,11 @@
     </div>
 
     <script>
-        // Mostrar/Ocultar los horarios disponibles
         document.querySelectorAll('.schedule-btn').forEach(button => {
             button.addEventListener('click', function () {
                 const day = this.getAttribute('data-day');
                 const scheduleDropdown = document.getElementById(`${day}-schedule`);
-    
-                // Alternar la visibilidad del horario
+
                 if (scheduleDropdown.style.display === "none" || scheduleDropdown.style.display === "") {
                     scheduleDropdown.style.display = "block";
                 } else {
@@ -173,12 +171,11 @@
                 }
             });
         });
-    
-        // Mostrar la ventana emergente de confirmación con la hora seleccionada
+
         document.querySelector('.confirm-btn').addEventListener('click', function () {
             let selectedTimes = [];
     
-            // Recorre cada día para verificar si se ha seleccionado un horario
+
             document.querySelectorAll('.time-select').forEach(select => {
                 const selectedTime = select.options[select.selectedIndex].value;
                 const day = select.id.split('-')[0].toUpperCase(); 
@@ -188,12 +185,20 @@
                 }
             });
     
-            // Verifica si al menos se seleccionó un horario
+
             if (selectedTimes.length > 0) {
                 alert(`Tu entrenamiento ha sido agendado con éxito para:\n${selectedTimes.join('\n')}`);
+                window.location.href = 'perfil.html';
             } else {
                 alert("Por favor selecciona al menos un horario.");
             }
+        });
+
+        const menu = document.getElementById('menu');
+        const navbar = document.querySelector('.navbar');
+
+        menu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
         });
     </script>
     

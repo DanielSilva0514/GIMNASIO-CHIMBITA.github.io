@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver Entrenamientos</title>
+  <link rel="stylesheet" href="style-ver_agenda.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+
+    <ul class="navbar">
+        <li><a href="index.html ">INICIO</a></li>
+        <li><a href="index.html #clases">CLASES</a></li>
+        <a href="index.html" class="logo"><span>Fitness</span>Plus</a>
+        <li><a href="index.html #entrenamiento">ENTRENAMIENTO</a></li>
+        <li><a href="perfil.html">PERFIL</a></li>
+    </ul>
+
+</header>
+
+<div class="container">
+  <!-- Contenedor principal -->
+  <div class="content-wrapper">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <h2>Menú</h2>
+      <ul>
+        <li>
+          <a href="#" data-section="clases-reservadas" class="menu-item active">
+            Clases reservadas
+          </a>
+        </li>
+        <li>
+          <a href="#" data-section="entrenamientos-personalizados" class="menu-item">
+            Entrenamientos personalizados
+          </a>
+        </li>
+        <li>
+          <a href="cerrar_sesion.html" class="menu-item">Cerrar sesión</a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Contenido dinámico -->
+    <main class="content">
+      <!-- Clases Reservadas -->
+      <section id="clases-reservadas" class="content-section active">
+        <h2>Clases Reservadas</h2>
+        <p>Aquí se muestran las clases reservadas.</p>
+        <!-- Detalles dinámicos -->
+      </section>
+
+      <!-- Entrenamientos Personalizados -->
+      <section id="entrenamientos-personalizados" class="content-section">
+        <h2>Entrenamientos Personalizados</h2>
+        <p>Aquí se muestran los entrenamientos personalizados agendados.</p>
+        <!-- Detalles dinámicos -->
+      </section>
+    </main>
+  </div>
+</div>
+
+
+  <script>
+    // Lógica para mostrar/ocultar secciones dinámicamente
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', event => {
+        event.preventDefault();
+
+        // Cambiar el contenido activo
+        document.querySelectorAll('.content-section').forEach(section => {
+          section.classList.remove('active');
+        });
+        const sectionId = event.target.getAttribute('data-section');
+        if (sectionId) {
+          document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Cambiar el estado activo del menú
+        document.querySelectorAll('.menu-item').forEach(link => {
+          link.classList.remove('active');
+        });
+        event.target.classList.add('active');
+      });
+      
+    });
+  </script>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-section about">
+          <h2><span>Fitness</span>Plus</h2>
+          <p>
+              En FitnessPlus, ofrecemos entrenamiento de calidad para que puedas alcanzar tus objetivos de salud y fitness. ¡Únete a nosotros y comienza tu transformación hoy mismo!
+          </p>
+          <div class="contact">
+              <span><i class='bx bxs-phone'></i> +57 123 456 789</span>
+              <span><i class='bx bxs-envelope'></i> info@fitnessplus.com</span>
+          </div>
+          <div class="socials">
+              <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+              <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+          </div>
+      </div>
+
+      <div class="footer-section links">
+          <h2>Enlaces Rápidos</h2>
+          <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#clases">Clases</a></li>
+              <li><a href="#entrenamiento">Entrenamiento</a></li>
+              <li><a href="register.html">Únete</a></li>
+              <li><a href="#plans">Planes</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-section contact-form">
+          <h2>Contáctanos</h2>
+          <form action="#">
+              <input type="email" name="email" class="text-input contact-input" placeholder="Tu Email...">
+              <textarea rows="4" name="message" class="text-input contact-input" placeholder="Tu Mensaje..."></textarea>
+              <button type="submit" class="btn">Enviar</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      &copy; 2024 FitnessPlus | Todos los derechos reservados
+  </div>
+</footer>
+</body>
+</html>

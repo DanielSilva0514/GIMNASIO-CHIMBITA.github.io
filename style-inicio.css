@@ -122,12 +122,12 @@ body {
 
 .instructions {
     text-align: left;
-    padding: 0 10px; /* Ajuste de padding para mantener alineación con input */
+    padding: 0 10px; 
     font-size: 18px;
     color: white;
     opacity: 0.5;
-    width: 90%; /* Alineación del ancho con input-box */
-    align-self: center; /* Centramos respecto al contenedor principal */
+    width: 90%; 
+    align-self: center; 
 
 }
 /* Estilos para pantallas grandes (escritorio) */

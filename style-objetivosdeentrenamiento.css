@@ -166,7 +166,7 @@ span {
     text-align: center;
     max-width: 600px;
     margin-right: 0;
-
+    flex: 1;
 }
 
 .benefit-item h3 {
@@ -181,9 +181,10 @@ span {
     text-align: center;
     align-self: center;
     max-width: 400px;
-    margin-left: 100px;
+    margin: 0 auto;
 }
 .benefit-description{
+    align-items: center;
     text-align: center; 
     font-size: 2.5rem;
     color: var(--text-color); 
@@ -345,41 +346,49 @@ span {
     }
  
     .home-content h1 {
-       font-size: 3.2rem; /* De 3.5rem a 3.2rem */
+       font-size: 3.2rem; 
     }
  
     .button {
        padding: 1rem 2rem;
-       font-size: 1.5rem; /* De 1.6rem a 1.5rem */
+       font-size: 1.5rem; 
     }
  }
 /* Responsive para dispositivos con ancho máximo de 991px */
 @media (max-width: 991px) {
 
     .section-description {
-        margin: 0 50px; /* Reducción de márgenes en pantallas medianas */
-        font-size: 16px;
+        margin: 2 50px; 
+        font-size: 2rem;
     }
     .navbar {
+        display: none; 
         flex-direction: column;
         background: var(--bg-color);
         transition: all 0.5s ease;
     }
 
     .navbar a {
-        display: block;
-        padding: 1.7rem;
-        font-size: 2.2rem;
+        display: block; 
+        padding: 1rem;
+        font-size: 2rem;
     }
 
     .navbar .active {
         right: 0;
     }
+    .navbar .logo {
+        font-size: 2.5rem; 
+        font-weight: 700;
+        border-bottom: none;
+    }
+
 
     header {
         padding: 2rem 3%;
         flex-direction: column;
     }
+
 
     .s-home {
         padding: 10rem 3%;
@@ -419,13 +428,10 @@ span {
 
 /* Responsive para dispositivos con ancho máximo de 786px */
 @media (max-width: 786px) {
-    .navbar {
-        display: none;
-    }
 
     .section-description {
         margin: 0 30px; 
-        font-size: 14px; 
+        font-size: 2rem; 
     }
     .benefit-description{
         text-align: center; 
@@ -462,7 +468,7 @@ span {
     }
     .section-description {
         margin: 0 15px; 
-        font-size: 14px; 
+        font-size: 2rem; 
     }
     .benefit-description{
         text-align: center; 
