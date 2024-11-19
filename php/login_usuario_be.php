@@ -1,8 +1,8 @@
 <?php
-    include 'conexion_be.php';
+include 'conexion_be.php';
 
-    $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
+$correo = $_POST['correo'];
+$contrasena = $_POST['contrasena'];
 
 // Ejecuta la consulta SQL para seleccionar todos los campos de usuarios y el valor del rol
 $query = "SELECT usuarios.*, roles.rol 
@@ -11,8 +11,6 @@ $query = "SELECT usuarios.*, roles.rol
           WHERE usuarios.correo = '$correo' AND usuarios.contrasena = '$contrasena'";
 
 $result = $conexion->query($query);
-    $row = $result->fetch_assoc();
-
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -35,5 +33,4 @@ if ($result->num_rows > 0) {
         </script>';
     exit();
 }
-    
 ?>
