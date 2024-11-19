@@ -1,3 +1,9 @@
+<?php
+    
+    require_once 'php/validar_sesion.php';
+    require_once 'validar_rol.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,11 +23,12 @@
 
         <div class='bx bx-menu' id="menu"></div>  
         <ul class="navbar">    
-            <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#clases">CLASES</a></li>
-            <a href="#inicio" class="logo"><span>Fitness</span>Plus</a>
-            <li><a href="#entrenamiento">ENTRENAMIENTO</a></li>
-            <li><a href="index.html #plans">ÚNETE</a></li>
+            <li><a href="index.php#inicio">INICIO</a></li>
+            <li><a href="index.php#clases">CLASES</a></li>
+            <a href="index.php" class="logo"><span>Fitness</span>Plus</a>
+            <li><a href="index.php#entrenamiento">ENTRENAMIENTO</a></li>
+            <li><a href="usuarioperfil.php">PERFIL</a></li>
+            <li><a href="php/cerrar_sesion.php">CERRAR SESION</a></li>
         </ul>
 
     </header>
@@ -58,7 +65,7 @@
                 <img src="img/movility.png" alt="cycla">
                 <h4>MOVILITY</h4>
             </div>
-            <a href="index.html #plans" class="button">ÚNETE YA</a>
+            <a href="clases.php" class="button">ÚNETE YA</a>
         </div>
     </section>
     <section class="train" id="entrenamiento">
@@ -146,47 +153,46 @@
 
 </body>
 <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h2><span>Fitness</span>Plus</h2>
-            <p>
-                En FitnessPlus, ofrecemos entrenamiento de calidad para que puedas alcanzar tus objetivos de salud y fitness. ¡Únete a nosotros y comienza tu transformación hoy mismo!
-            </p>
-            <div class="contact">
-                <span><i class='bx bxs-phone'></i> +57 123 456 789</span>
-                <span><i class='bx bxs-envelope'></i> info@fitnessplus.com</span>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2><span>Fitness</span>Plus</h2>
+                    <p>
+                        En FitnessPlus, ofrecemos entrenamiento de calidad para que puedas alcanzar tus objetivos de salud y fitness. ¡Únete a nosotros y comienza tu transformación hoy mismo!
+                    </p>
+                    <div class="contact">
+                        <span><i class='bx bxs-phone'></i> +57 123 456 789</span>
+                        <span><i class='bx bxs-envelope'></i> info@fitnessplus.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    </div>
+                </div>
+        
+                <div class="footer-section links">
+                    <h2>Enlaces Rápidos</h2>
+                    <ul>
+                        <li><a href="index.php#inicio">Inicio</a></li>
+                        <li><a href="index.php#clases">Clases</a></li>
+                        <li><a href="index.php#entrenamiento">Entrenamiento</a></li>
+                        <li><a href="usuarioperfil.php">Perfil</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section contact-form">
+                    <h2>Contáctanos</h2>
+                    <form action="#">
+                        <input type="email" name="email" class="text-input contact-input" placeholder="Tu Email...">
+                        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Tu Mensaje..."></textarea>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
             </div>
-            <div class="socials">
-                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+        
+            <div class="footer-bottom">
+                &copy; 2024 FitnessPlus | Todos los derechos reservados
             </div>
-        </div>
-
-        <div class="footer-section links">
-            <h2>Enlaces Rápidos</h2>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#clases">Clases</a></li>
-                <li><a href="#entrenamiento">Entrenamiento</a></li>
-                <li><a href="register.html">Únete</a></li>
-                <li><a href="#plans">Planes</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section contact-form">
-            <h2>Contáctanos</h2>
-            <form action="#">
-                <input type="email" name="email" class="text-input contact-input" placeholder="Tu Email...">
-                <textarea rows="4" name="message" class="text-input contact-input" placeholder="Tu Mensaje..."></textarea>
-                <button type="submit" class="btn">Enviar</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        &copy; 2024 FitnessPlus | Todos los derechos reservados
-    </div>
-</footer>
+        </footer>
 </html>
