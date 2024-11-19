@@ -21,9 +21,9 @@
                     alert("Usuario no encontrado, por favor verifique los datos introducidos");
                     window.location="../registro.php";
                 </script>';
-            header("location:../registro.php");
-        }
-
+        exit();
+    }
+    
     
 
 
