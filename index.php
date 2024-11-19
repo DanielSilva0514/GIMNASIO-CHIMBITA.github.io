@@ -52,17 +52,17 @@
             </div>
 
             <div class="row">
-                <img src="img/cardio.png" alt="cycla">
+                <img src="img/cardio.png" alt="cardio">
                 <h4>CARDIO</h4>
             </div>
 
             <div class="row">
-                <img src="img/reduce.png" alt="cycla">
+                <img src="img/reduce.png" alt="reduce">
                 <h4>REDUCE</h4>
             </div>
 
             <div class="row">
-                <img src="img/movility.png" alt="cycla">
+                <img src="img/movility.png" alt="movilit">
                 <h4>MOVILITY</h4>
             </div>
             <a href="clases.php" class="button">ÚNETE YA</a>
@@ -194,5 +194,5 @@
             <div class="footer-bottom">
                 &copy; 2024 FitnessPlus | Todos los derechos reservados
             </div>
-        </footer>
+</footer>
 </html>

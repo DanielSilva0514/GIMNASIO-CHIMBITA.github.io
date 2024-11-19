@@ -1,3 +1,21 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'administrador') {
+      echo '
+          <script>
+              alert("No tienes permisos para acceder a esta página");
+              window.location = "registro.php";
+          </script>
+      ';
+      session_destroy();
+      die();
+  }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +28,17 @@
 <body>
   <header>
 
-    <ul class="navbar">
-        <li><a href="index.html ">INICIO</a></li>
-        <li><a href="index.html #clases">CLASES</a></li>
-        <a href="index.html" class="logo"><span>Fitness</span>Plus</a>
-        <li><a href="index.html #entrenamiento">ENTRENAMIENTO</a></li>
-        <li><a href="perfil.html">PERFIL</a></li>
+    <div class='bx bx-menu' id="menu"></div>  
+    <ul class="navbar">    
+        <li><a href="index.php#inicio">INICIO</a></li>
+        <li><a href="index.php#clases">CLASES</a></li>
+        <a href="index.php" class="logo"><span>Fitness</span>Plus</a>
+        <li><a href="index.php#entrenamiento">ENTRENAMIENTO</a></li>
+        <li><a href="usuarioperfil.php">PERFIL</a></li>
+        <li><a href="php/cerrar_sesion.php">CERRAR SESION</a></li>
     </ul>
 
-</header>
+  </header>
 
 <div class="container">
   <!-- Contenedor principal -->
@@ -37,9 +57,7 @@
             Entrenamientos personalizados
           </a>
         </li>
-        <li>
-          <a href="cerrar_sesion.html" class="menu-item">Cerrar sesión</a>
-        </li>
+        
       </ul>
     </aside>
 
@@ -111,11 +129,10 @@
       <div class="footer-section links">
           <h2>Enlaces Rápidos</h2>
           <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#clases">Clases</a></li>
-              <li><a href="#entrenamiento">Entrenamiento</a></li>
-              <li><a href="register.html">Únete</a></li>
-              <li><a href="#plans">Planes</a></li>
+              <li><a href="index.php#inicio">Inicio</a></li>
+              <li><a href="index.php#clases">Clases</a></li>
+              <li><a href="index.php#entrenamiento">Entrenamiento</a></li>
+              <li><a href="usuarioperfil.php">Perfil</a></li>
           </ul>
       </div>
 
