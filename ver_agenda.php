@@ -11,9 +11,41 @@
       session_destroy();
       die();
   }
+  include ('php/conexion_be.php');
+  // Consulta para obtener las clases reservadas
+    $sql_reservas = "SELECT usuarios.id AS usuario_id, usuarios.nombre_completo AS usuario, clases_tipo.clases AS entrenamiento, sedes.sedes AS sede, dias.dias AS dia, horas.horas AS hora 
+      FROM reservas_clase
+      INNER JOIN usuarios ON reservas_clase.correo = usuarios.correo
+      INNER JOIN clases_tipo ON reservas_clase.id_clases = clases_tipo.id
+      INNER JOIN sedes ON reservas_clase.id_sedes = sedes.id
+      INNER JOIN dias ON reservas_clase.id_dias = dias.id
+      INNER JOIN horas ON reservas_clase.id_horas = horas.id
+    ";
+  
+    $resultado_reservas = $conexion->query($sql_reservas);
+  
+    if (!$resultado_reservas) {
+      echo "Error en la consulta: " . $conexion->error;
+      die();
+    }
 
+    $sql_entrenamientos = "SELECT usuarios.id AS usuario_id, usuarios.nombre_completo AS usuario, agendamientos.hora AS hora, dias.dias AS dia, entrenadores.nombre AS entrenador, tipo_entrenamiento.nombre AS tipo_entrenamiento
+    FROM agendamientos
+    INNER JOIN usuarios ON agendamientos.usuario_id = usuarios.id
+    INNER JOIN dias ON agendamientos.dia_id = dias.id
+    INNER JOIN entrenadores ON agendamientos.entrenador_id = entrenadores.id
+    INNER JOIN tipo_entrenamiento ON agendamientos.tipo_entrenamiento = tipo_entrenamiento.id
+";
+
+$resultado_entrenamientos = $conexion->query($sql_entrenamientos);
+
+if (!$resultado_entrenamientos) {
+    echo "Error en la consulta de entrenamientos personalizados: " . $conexion->error;
+    die();
+}
+    
+  
 ?>
-
 
 
 <!DOCTYPE html>
@@ -22,7 +54,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ver Entrenamientos</title>
-  <link rel="stylesheet" href="style-ver_agenda.css">
+  <link rel="stylesheet" href="veragenda.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -66,15 +98,61 @@
       <!-- Clases Reservadas -->
       <section id="clases-reservadas" class="content-section active">
         <h2>Clases Reservadas</h2>
-        <p>Aquí se muestran las clases reservadas.</p>
-        <!-- Detalles dinámicos -->
+        <table class = "table">
+            
+                <tr>
+                    <th><p>ID</p></th>
+                    <th><p>Usuario</p></th>
+                    <th><p>Tipo de entrenamiento</p></th>
+                    <th><p>Sede</p></th>
+                    <th><p>Dia</p></th>
+                    <th><p>Hora</p></th>
+                </tr>
+            
+            
+              <?php while ($reserva = $resultado_reservas->fetch_assoc()){
+                 ?>
+                  <tr>
+                    <td><p><?php echo $reserva['usuario_id']; ?></p></td>
+                    <td><p><?php echo $reserva['usuario']; ?></p></td>
+                    <td><p><?php echo $reserva['entrenamiento']; ?></p></td>
+                    <td><p><?php echo $reserva['sede']; ?></p></td>
+                    <td><p><?php echo $reserva['dia']; ?></p></td>
+                    <td><p><?php echo $reserva['hora']; ?></p></td>
+                  </tr> 
+                <?php
+              }
+              ?> 
+
+        </table>
       </section>
 
       <!-- Entrenamientos Personalizados -->
-      <section id="entrenamientos-personalizados" class="content-section">
+      <section id="entrenamientos-personalizados" class="content-section active">
         <h2>Entrenamientos Personalizados</h2>
-        <p>Aquí se muestran los entrenamientos personalizados agendados.</p>
-        <!-- Detalles dinámicos -->
+        <table class = "table">
+            
+                <tr>
+                    <th><p>ID</p></th>
+                    <th><p>Usuario</p></th>
+                    <th><p>Entrenador</p></th>
+                    <th><p>Tipo de entrenamiento</p></th>
+                    <th><p>Dia</p></th>
+                    <th><p>Hora</p></th>
+                </tr>
+              <?php while ($entrenamiento = $resultado_entrenamientos->fetch_assoc()): ?>
+                <tr>
+                    <td><p><?php echo $entrenamiento['usuario_id']; ?></p></td>
+                    <td><p><?php echo $entrenamiento['usuario']; ?></p></td>
+                    <td><p><?php echo $entrenamiento['entrenador']; ?></p></td>
+                    <td><p><?php echo $entrenamiento['tipo_entrenamiento']; ?></p></td>
+                    <td><p><?php echo $entrenamiento['dia']; ?></p></td>
+                    <td><p><?php echo $entrenamiento['hora']; ?></p></td>
+                </tr>
+    <?php endwhile; ?>
+              
+              
+        
       </section>
     </main>
   </div>
@@ -107,48 +185,6 @@
   </script>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-      <div class="footer-section about">
-          <h2><span>Fitness</span>Plus</h2>
-          <p>
-              En FitnessPlus, ofrecemos entrenamiento de calidad para que puedas alcanzar tus objetivos de salud y fitness. ¡Únete a nosotros y comienza tu transformación hoy mismo!
-          </p>
-          <div class="contact">
-              <span><i class='bx bxs-phone'></i> +57 123 456 789</span>
-              <span><i class='bx bxs-envelope'></i> info@fitnessplus.com</span>
-          </div>
-          <div class="socials">
-              <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-              <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-              <a href="#"><i class='bx bxl-twitter'></i></a>
-              <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-          </div>
-      </div>
 
-      <div class="footer-section links">
-          <h2>Enlaces Rápidos</h2>
-          <ul>
-              <li><a href="index.php#inicio">Inicio</a></li>
-              <li><a href="index.php#clases">Clases</a></li>
-              <li><a href="index.php#entrenamiento">Entrenamiento</a></li>
-              <li><a href="usuarioperfil.php">Perfil</a></li>
-          </ul>
-      </div>
-
-      <div class="footer-section contact-form">
-          <h2>Contáctanos</h2>
-          <form action="#">
-              <input type="email" name="email" class="text-input contact-input" placeholder="Tu Email...">
-              <textarea rows="4" name="message" class="text-input contact-input" placeholder="Tu Mensaje..."></textarea>
-              <button type="submit" class="btn">Enviar</button>
-          </form>
-      </div>
-  </div>
-
-  <div class="footer-bottom">
-      &copy; 2024 FitnessPlus | Todos los derechos reservados
-  </div>
-</footer>
 </body>
 </html>

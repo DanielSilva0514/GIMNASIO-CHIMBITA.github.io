@@ -194,6 +194,20 @@
                 &copy; 2024 FitnessPlus | Todos los derechos reservados
             </div>
         </footer>
+        <script>
+        const menu = document.getElementById('menu');
+        const navbar = document.querySelector('.navbar');
+
+        menu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+        <script>
+            AOS.init({
+              offset:300,
+              duration:1400,
+            });
+          </script>
     </body>
 
 </html>

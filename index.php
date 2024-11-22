@@ -82,7 +82,7 @@
             </p>
             <p>¡Empieza hoy tu transformación con nosotros!</p>
 
-            <a href="ObjetivosDeEntrenamiento.html" class="button">CONOCE MÁS</a>
+            <a href="ObjetivosDeEntrenamiento.php" class="button">CONOCE MÁS</a>
         </div>
     </section>
 

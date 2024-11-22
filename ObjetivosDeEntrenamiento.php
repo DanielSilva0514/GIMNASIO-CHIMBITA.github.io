@@ -1,3 +1,8 @@
+<?php
+    require_once 'php/validar_sesion.php';
+    require_once 'validar_rol.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -71,7 +76,7 @@
 
             <div class="call-to-action">
                 <h2 class="cta-title">AGENDA TU ENTRENAMIENTO</h2>
-                <a href="AgendamientoEntrePerso.html" class="button">RESERVA YA</a>
+                <a href="Trainers.php" class="button">RESERVA YA</a>
             </div>
         </section>
 
@@ -114,7 +119,7 @@
 
             <div class="call-to-action">
                 <h2 class="cta-title">AGENDA TU ENTRENAMIENTO</h2>
-                <a href="AgendamientoEntrePerso.html" class="button">RESERVA YA</a>
+                <a href="Trainers.php" class="button">RESERVA YA</a>
             </div>
         </section>
 
@@ -158,7 +163,7 @@
 
             <div class="call-to-action">
                 <h2 class="cta-title">AGENDA TU ENTRENAMIENTO</h2>
-                <a href="AgendamientoEntrePerso.html" class="button">RESERVA YA</a>
+                <a href="Trainers.php" class="button">RESERVA YA</a>
             </div>
         </section>
     </div>

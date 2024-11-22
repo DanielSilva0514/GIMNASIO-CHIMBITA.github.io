@@ -162,10 +162,10 @@ span {
 /*Contenido principal */
 .content {
   margin-top: 5.5%;
-  flex-grow: 1;
+  width: 100%;
   padding: 20px;
   background-color: #e0e0e0;
-  overflow-y: auto;
+  
 }
 .content-section {
   display: none;
@@ -177,29 +177,54 @@ span {
 .content h2 {
   color: #333;
   font-size: 2rem;
-  font-family: inherit;
-
-}
-
-.content p {
-  background-color: white;
   padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-family: inherit;
-  font-size: 1.5rem;
 }
+.content-section.active h2{
+    color: #333;
+    font-size: 2rem;
+    padding: 15px;
+}
+
 
 .content-section {
   display: none;
-}.content-section p {
+}
+.content-section p {
   color: #000;
 }
 
-.content-section.active {
-  display: block;
+
+table,th,td{
+    
+    border: 2px solid black;
+    width: auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 2rem;
+}
+td p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+    padding: 5px; /* Añadir algo de espacio dentro del párrafo */
+    font-size: 2rem;
+}
+.th p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos */
+    padding: 5px; /* Añadir algo de espacio dentro del párrafo */
+    font-size: 2rem;
+    background-color: #7D0000;
 }
 
+th,td{
+    padding: 15px;
+}
+th{
+    background-color: #7D0000;
+    text-align: left;
+}
+td{
+    color: #000;
+    background-color: #f2f2f2;
+}
 /* Footer*/
 .footer {
     background-color: var(--bg-color);

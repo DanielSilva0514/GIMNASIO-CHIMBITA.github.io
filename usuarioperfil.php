@@ -28,7 +28,23 @@
         die();
     }
     
+    $entrenamiento_personalizado = "SELECT agendamientos.hora AS hora, dias.dias AS dia, entrenadores.nombre AS entrenador, tipo_entrenamiento.nombre AS tipo_entrenamiento
+    FROM agendamientos
+    INNER JOIN dias ON agendamientos.dia_id = dias.id
+    INNER JOIN entrenadores ON agendamientos.entrenador_id = entrenadores.id
+    INNER JOIN tipo_entrenamiento ON agendamientos.tipo_entrenamiento = tipo_entrenamiento.id
+    WHERE agendamientos.usuario_id = (SELECT id FROM usuarios WHERE correo = '$id_user')
+    LIMIT 1
+    ";
 
+    $resultado_entrenamiento = $conexion->query($entrenamiento_personalizado);
+
+    if (!$resultado_entrenamiento) {
+        echo "Error en la consulta de entrenamiento personalizado: " . $conexion->error;
+        die();
+    }
+    // Si existe una fila de entrenamiento personalizado
+    $entrenamiento = $resultado_entrenamiento->fetch_assoc();
                     
 ?>
 
@@ -89,25 +105,33 @@
                         
                         <!-- Dividir esta sección en dos -->
                         <div class="sub-right-top">
-                            <h2>Información del Plan</h2>
-                            <div class="plan-data">
-                                <div class="data-item">
-                                    <span class="data-label">Tipo de Plan:</span>
-                                    <span class="data-value">Premium</span>
+                            <h2>Entrenamiento personalizado</h2>
+                            <?php if ($entrenamiento): ?>
+                                <div class="plan-data">
+                                    <div class="data-item">
+                                        <span class="data-label">Entrenador:</span>
+                                        <span class="data-value"><?php echo $entrenamiento['entrenador']; ?></span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Tipo de entrenamiento:</span>
+                                        <span class="data-value"><?php echo $entrenamiento['tipo_entrenamiento']; ?></span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Día:</span>
+                                        <span class="data-value"><?php echo $entrenamiento['dia']; ?></span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Hora:</span>
+                                        <span class="data-value"><?php echo $entrenamiento['hora']; ?></span>
+                                    </div>
                                 </div>
-                                <div class="data-item">
-                                    <span class="data-label">Fecha de Inicio:</span>
-                                    <span class="data-value">01/01/2024</span>
-                                </div>
-                                <div class="data-item">
-                                    <span class="data-label">Fecha de Vencimiento:</span>
-                                    <span class="data-value">01/01/2025</span>
-                                </div>
-                            </div>
+                            <?php else: ?>
+                                <p>No tienes un entrenamiento personalizado reservado.</p>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="sub-right-bottom">
-                            <h2>Detalles del Entrenamiento</h2>
+                            <h2>Reservas de Clase</h2>
                             <div class="training-data">
                             <?php while ($reserva = $resultado_reservaciones->fetch_assoc()): ?>
                             <div class="data-item">
@@ -133,6 +157,20 @@
                 </div>
             </section>
         </main>
+        <script>
+        const menu = document.getElementById('menu');
+        const navbar = document.querySelector('.navbar');
+
+        menu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+        <script>
+            AOS.init({
+              offset:300,
+              duration:1400,
+            });
+          </script>
 
 
 
